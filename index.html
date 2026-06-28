@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espaço Empatia - Blog & Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Espaço Empatia</div>
+        <nav>
+            <a href="#blog">Blog</a>
+            <a href="#quiz">Quiz</a>
+            <button id="loginBtn" onclick="toggleLogin()">Login</button>
+        </nav>
+    </header>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleLogin()">&times;</span>
+            <h2>Entrar na Comunidade</h2>
+            <form onsubmit="simularLogin(event)">
+                <input type="email" placeholder="Seu E-mail" required>
+                <input type="password" placeholder="Sua Senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <main>
+        <section id="blog" class="container">
+            <h2>Artigos Recentes</h2>
+            <div class="blog-grid">
+                <article class="post-card">
+                    <h3>O que é a Escuta Ativa?</h3>
+                    <p>Descubra como ouvir de verdade pode transformar as suas relações diárias...</p>
+                    <a href="#" class="ler-mais">Ler artigo →</a>
+                </article>
+                <article class="post-card">
+                    <h3>Empatia vs. Simpatia</h3>
+                    <p>Entenda a diferença entre se colocar no lugar do outro e apenas ter pena...</p>
+                    <a href="#" class="ler-mais">Ler artigo →</a>
+                </article>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="quiz" class="container">
+            <h2>Quiz: Qual é o seu estilo de Empatia?</h2>
+            <p id="quiz-intro">Faça o login para salvar o seu resultado, ou responda abaixo para descobrir agora!</p>
+            
+            <div id="quiz-container">
+                <div class="question" id="q1">
+                    <p><strong>1. Um amigo liga-te a chorar por um problema. O que fazes primeiro?</strong></p>
+                    <label><input type="radio" name="p1" value="A"> Oiço em silêncio e deixo-o desabafar tudo.</label><br>
+                    <label><input type="radio" name="p1" value="B"> Tento logo encontrar uma solução prática para o problema.</label><br>
+                    <label><input type="radio" name="p1" value="C"> Fico muito afetado(a) e sinto a dor dele como se fosse minha.</label>
+                </div>
+
+                <div class="question" id="q2">
+                    <p><strong>2. Quando alguém discorda de ti numa discussão importante:</strong></p>
+                    <label><input type="radio" name="p2" value="A"> Tento perceber os motivos da pessoa antes de contra-argumentar.</label><br>
+                    <label><input type="radio" name="p2" value="B"> Tento convencê-la rapidamente de que o meu ponto de vista faz mais sentido.</label><br>
+                    <label><input type="radio" name="p2" value="C"> Prefiro mudar de assunto para evitar o mal-estar.</label>
+                </div>
+
+                <button onclick="calcularResultado()" class="btn-quiz">Ver Resultado</button>
+            </div>
+
+            <div id="resultado" class="resultado-box hidden">
+                <h3>O teu perfil é: <span id="perfil-titulo"></span></h3>
+                <p id="perfil-descricao"></p>
+                <button onclick="reiniciarQuiz()" class="btn-quiz">Refazer Quiz</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Espaço Empatia. Feito com ❤️</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
